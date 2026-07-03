@@ -3,10 +3,12 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useUser } from "@/context/UserContext";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { setUser } = useUser();
 
   const router = useRouter();
 
@@ -30,8 +32,8 @@ export default function Login() {
 
     if (data.success) {
       alert(data.message);
-      router.replace("/");
-      router.refresh();
+      setUser(data.user)
+      router.push("/");
     } else {
       alert(data.message);
     }
