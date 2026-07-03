@@ -1,8 +1,3 @@
-export const metadata = {
-  title: "Contact Us | BuildHome",
-  description:
-    "Contact BuildHome for construction services and property inquiries.",
-};
 export default function Contact() {
   return (
     <section className="bg-gray-100 py-20 px-6">
